@@ -1,0 +1,45 @@
+#include<stdio.h>
+#include<math.h>
+int main(){
+	int i;
+	for(i=1;i<10;i++){
+	printf("Bai %d:",i);
+	float a,b,c;
+	printf("\n Nhap he so cua phuong trinh bac hai ax2+bx+c=0");
+	printf("\na=");
+	scanf("%f",&a);
+	printf("b=");
+	scanf("%f",&b);
+	printf("c=");
+	scanf("%f",&c);
+		float delta=b*b-4*a*c;
+			float x1=(-(b)+sqrt(delta))/(2*a);
+			float x2=(-(b)-sqrt(delta))/(2*a);
+		 float x3=x1+x2;
+	if(a==0){
+		printf("\nPhuong trinh vo li"); 
+		}else{
+		if(delta==0){
+		printf("\nphuong trinh có nhiem kep x1=x2 tuc la %.2f=%.2f",x1,x2);
+			}else if (delta>0){
+			if((x1+x2)>0 &&(x1*x2)>0){
+			printf("\nPhuong trinh có 2 nghiem duong phan biet X1=%.2f x2=%.2f\n",x1,x2);
+				//printf("\nphuong trinh co %s la x1=%.2f x2=%.2f",(x3>0)?"2 nghiem duong":"2 nghiem am",x1,x2);
+
+			}else if((x1+x2<0)&&(x1*x2)>0){
+			printf("\nPhuong trinh co 2 nghiem am x1=%.2f x2=%.2f\n",x1,x2);
+				//printf("\nphuong trinh co %s la x1=%.2f x2=%.2f",(x3>0)?"2 nghiem duong":"2 nghiem am",x1,x2);
+			}else if((x1*x2)<0){
+			printf("\nPhuong trinh co nghiem trai dau x1=%.2f x2=%.2f\n",x1,x2);
+			}else{
+				printf("\nPhuong trinh co 2 nghiem x1=%.2f x2=%.2f\n",x1,x2);
+		}
+	}else {
+	printf("\nPhuong trinh vo nghiem\n");
+			}
+		}
+	}
+}
+				
+
+	
