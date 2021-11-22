@@ -1,0 +1,74 @@
+#include<stdio.h>
+int a[100][100];
+int m,n;
+void NhapMaTran(int x[100][100],int &n){
+	do{
+	printf("Nhap n: ");
+	scanf("%d",&n);
+	}while(n<=0);
+	for(int i=0;i<n;i++){
+		for(int j=0;j<n;j++){
+			printf("Nhap x[%d][%d]= ",i,j);
+			scanf("%d",&x[i][j]);
+			}
+		}
+	}	
+void XuatMaTran(int x[100][100],int n){
+	printf("Mang : \n");
+	for(int i=0;i<n;i++){
+		for(int j=0;j<n;j++){
+			printf(" %d ",a[i][j]);	
+			}
+		printf("\n");
+		}
+	}
+	int cacvitritrongmatran(int x[100][100],int n){
+		printf("cac gia tri nam o tam giac tren duong cheo chinh : ");
+		for(int i=0;i<n;i++){
+			for(int j=0;j<n;j++){
+				if(i<j){
+					printf("%d ",x[i][j]);
+					}
+				}
+			}
+		printf("\ncac gia tri nam o tam giac duoi duong cheo chinh : ");
+		for(int i=0;i<n;i++){
+			for(int j=0;j<n;j++){
+				if(i>j){
+					printf("%d ",x[i][j]);
+					}
+				}
+			}
+		printf("\ncac gia tri nam o duong cheo chinh : ");
+		for(int i=0;i<n;i++){
+			for(int j=0;j<n;j++){
+				if(i==j){
+					printf("%d ",x[i][j]);
+					}
+				}
+			}
+		printf("\ncac gia tri nam o duong cheo phu : ");
+		for(int i=0;i<n;i++){
+			int j=n-1-i;
+					printf("%d ",x[i][j]);
+					}		
+		printf("\ncac gia tri nam o tam giac tren duong cheo phu : ");		
+		 for(int i=0; i<n-1; i++){
+    	 	for(int j=0; j<n-1-i; j++){
+        	printf("%d ", a[i][j]);
+        	}
+        }
+ 		printf("\ncac gia tri nam o tam giac duoi duong cheo phu : ");		
+		 for(int i=1; i<n; i++){
+     		for(int j=n-i; j<n; j++){
+       		printf("%d ", a[i][j]);
+			   }
+			} 		
+		}			
+	int main(){
+	NhapMaTran(a,n);
+	XuatMaTran(a,n);
+	cacvitritrongmatran(a,n);
+	}
+				
+					
