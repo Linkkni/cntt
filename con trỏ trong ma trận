@@ -1,0 +1,33 @@
+#include<stdio.h>
+#include<stdlib.h>
+int main(){
+	int m=2;int n=2;
+	//cap phat bo nho dong cho mangcontro
+	int **mangcontro=(int**)calloc(m,sizeof(int));
+	for(int i=0;i<m;i++){
+		// chap phat bo nho dong cho mangcontro[i]
+		mangcontro[i]=(int*)malloc(n*sizeof(int));
+		}
+		// nhap mang
+		printf("Nhap phan tu cho ma tran:\n");
+		for(int i=0;i<m;i++){
+			for(int j=0;j<n;j++){
+				printf("a[%d][%d]=",i,j);
+				scanf("%d",&mangcontro[i][j]);
+				}
+			}	
+		//cuat mang		
+			printf("Mang cua ban:\n");
+			for(int i=0;i<m;i++){
+				for(int j=0;j<n;j++){
+					printf( "%d ",mangcontro[i][j]);
+					}
+					printf("\n");
+				}
+				for(int i=0;i<m;i++){
+				free(mangcontro[i]);//giai phong bo nho cua mangcontro[i]
+				}	
+			free(mangcontro); // giai phpng bo nho cua mang con tro
+			}
+			
+				
