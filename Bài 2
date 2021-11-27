@@ -1,0 +1,35 @@
+#include"stdio.h"
+#include"stdlib.h"
+#include"string.h"
+void demTu(char a[], size_t x,int &dem){
+	for(int i=0;i<x;i++){
+		if(a[i]==32){
+			dem++;
+		}
+	}
+}
+void delete_n(char x[]){
+	int len = strlen(x);
+	if(x[len-1]=='\n'){
+		x[len-1]='\0';
+	}
+}
+
+int main(){
+	FILE *f;
+	f = fopen("ex2","w");
+	if(f==NULL){
+		printf("Error");
+		exit(0);
+	}
+	char a[50];
+	printf("Chuoi can nhap la : ");
+	fgets(a,sizeof(a),stdin);
+//	delete_n(a);
+	size_t x = strlen(a);
+	int dem=1;
+	demTu(a,x,dem);
+	fprintf(f,"chuoi vua nhap la %s",a);
+	fprintf(f," %d ",dem);
+	fclose(f);
+}
